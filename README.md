@@ -19,7 +19,13 @@ OAUTH_TOKEN=2.でとったoauth_token
 OAUTH_TOKEN_SECRET=2.で取ったoauth_token_secret
 
 ```
- 4. rails console で、 `me = Me.new` とし、 `me.flickr.upload_photo ...` という形でアップロード。具体的なパラメータは http://koulog.hatenablog.com/entry/%3Fp%3D60 このあたりを参照 
+ 4. rails console で、以下のような感じでアップロードできます。具体的なパラメータはFlickrRawのdocumentをみるとよいと思いますが、とりあえずは http://koulog.hatenablog.com/entry/%3Fp%3D60 このあたりを参照しました。 
+
+```
+jpg = "JPGファイルのパス"
+me = Me.new
+me.flickr.upload_photo jpg, title: 'Sakura2', description: 'Sakura2 picture', is_public: 0
+```
 
 * Ruby version
 
